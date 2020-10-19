@@ -21,8 +21,8 @@ DEBIAN_FRONTEND=noninteractive apt-get -y install  mysql-server
 chown -R mysql:mysql /var/lib/mysql
 
 #start install php 
-apt  update -y
-apt -y install php7.3-fpm php-mysql
+apt-get  update -y
+apt-get -y install php7.3-fpm php-mysql
 wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.zip
 unzip phpMyAdmin-5.0.2-all-languages.zip
 mv phpMyAdmin-5.0.2-all-languages /var/www/html/
@@ -37,16 +37,19 @@ cd /var/www/html/
 wget https://wordpress.org/latest.tar.gz
 tar -xvzf latest.tar.gz
 rm -fr latest.tar.gz
-
+rm -rf wordpress/wp-config*.php
+cd
+mv wp-config.php /var/www/html/wordpress/.
 
 #install ssl
-apt -y install golang git
-apt -y update
-apt -y upgrade
-cd /etc/nginx/
-mkdir ssl
-chmod +x ssl
-cd
-git clone https://github.com/FiloSottile/mkcert && cd mkcert
-go build -ldflags "-X main.Version=$(git describe --tags)"
+#apt -y install golang git
+#apt -y update
+#apt -y upgrade
+#cd /etc/nginx/
+#mkdir ssl
+#chmod +x ssl
+#cd
+#git clone https://github.com/FiloSottile/mkcert && cd mkcert
+#go build -ldflags "-X main.Version=$(git describe --tags)"
+#con.......
 
