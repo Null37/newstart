@@ -39,7 +39,9 @@ tar -xvzf latest.tar.gz
 rm -fr latest.tar.gz
 rm -rf wordpress/wp-config*.php
 cd
+#setting wordpress
 mv wp-config.php /var/www/html/wordpress/.
+mv /var/www/html/phpmyadmin /var/www/html/wordpress/.
 
 #install ssl
 #apt -y install golang git
