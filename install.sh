@@ -43,6 +43,23 @@ cd
 mv wp-config.php /var/www/html/wordpress/.
 mv /var/www/html/phpmyadmin /var/www/html/wordpress/.
 
+#troubleshoot php
+apt-get install -y php-mbstring
+apt-get -y update
+apt-get -y upgrade
+######################
+#error database 
+#create new database named phpmyadmin
+#export all data new create and import now restart
+#######################
+#for error php my admin 1 change the config.inc.php add the random 32 charachter to commit fill 
+#for error phpmyadmin create file named tmp and add $cfg[Tmpr]='/tmp';
+cd /var/www/html/wordpress/phpmyadmin
+mkdir tmp && chmod 777 tmp
+cd
+mv config.inc.php /var/www/html/wordpress/phpmyadmin/config.inc.php
+#and restart the service 
+#######################
 #install ssl
 #apt -y install golang git
 #apt -y update
