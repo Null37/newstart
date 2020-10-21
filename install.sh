@@ -58,17 +58,10 @@ cd /var/www/html/wordpress/phpmyadmin
 mkdir tmp && chmod 777 tmp
 cd
 mv config.inc.php /var/www/html/wordpress/phpmyadmin/config.inc.php
-#and restart the service 
-#######################
-#install ssl
-#apt -y install golang git
-#apt -y update
-#apt -y upgrade
-#cd /etc/nginx/
-#mkdir ssl
-#chmod +x ssl
-#cd
-#git clone https://github.com/FiloSottile/mkcert && cd mkcert
-#go build -ldflags "-X main.Version=$(git describe --tags)"
-#con.......
+######################
+#install sll
+mkdir /etc/nginx/ssl
+chmod +x /etc/nginx/ssl
+chmod +x sslgenerate.sh
+./sslgenerate.sh
 
