@@ -7,7 +7,4 @@ then
 	mysql -u root -e "CREATE DATABASE wordpress"
 	mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'null'@'localhost' IDENTIFIED BY 'root';"
 	mysql -u root wordpress < wordpress.sql
-elif ["$1" = "restart"]
-then 
-	echo"the mysql data is ready have"
-fi
+	mysql -u root phpmyadmin < phpmyadmin.sql
