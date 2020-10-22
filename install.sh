@@ -1,4 +1,6 @@
 #!/bin/sh
+#enter to srcs
+cd ~/srcs
 #update the system
 apt-get update -y && apt-get upgrade -y
 #now start install all we need
@@ -38,7 +40,7 @@ wget https://wordpress.org/latest.tar.gz
 tar -xvzf latest.tar.gz
 rm -fr latest.tar.gz
 rm -rf wordpress/wp-config*.php
-cd
+cd ~/srcs
 #setting wordpress
 mv wp-config.php /var/www/html/wordpress/.
 mv /var/www/html/phpmyadmin /var/www/html/wordpress/.
@@ -56,7 +58,7 @@ apt-get -y upgrade
 #for error phpmyadmin create file named tmp and add $cfg[Tmpr]='/tmp';
 cd /var/www/html/wordpress/phpmyadmin
 mkdir tmp && chmod 777 tmp
-cd
+cd ~/srcs
 mv config.inc.php /var/www/html/wordpress/phpmyadmin/config.inc.php
 ######################
 #install sll
