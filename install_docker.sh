@@ -11,10 +11,10 @@ mkdir -p /tmp/.$(whoami)-brew-locks
 echo 'export PATH="$HOME/.brown/bin:$PATH"' >> ~/.bashrc
 echo 'export PATH="$HOME/.brown/bin:$PATH"' >> ~/.zshrc
 brew install docker && brew install docker-machine
-docker-machine create --driver virtualbox null
+docker-machine create --driver virtualbox default
 #echo "ifconfig eth1 192.168.99.50 netmask 255.255.255.0 broadcast 192.168.99.255 up" | docker-machine ssh null sudo tee /var/lib/boot2docker/bootsync.sh > /dev/null
-docker-machine env null
-eval $(docker-machine env null)
+docker-machine env
+eval $(docker-machine env)
 # and finally to test run:
 docker --version
 brew --version
